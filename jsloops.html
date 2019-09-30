@@ -1,0 +1,82 @@
+<html>  
+    <title>Javascript array basics practice.</title>
+ 
+<body>  
+<script type="text/javascript">  
+
+// Way-1---> Using isArray method of Array
+
+   var testArray = [1,2,3,4,5,6];
+    if(Array.isArray(testArray)){
+        console.log("it is array");
+    } else {
+        console.log("it is not Array");
+    }
+
+//Way 2===>Using Instance of operator
+
+const data = [1,2,3,4,5,6];
+const isArray = data instanceof Array;
+console.log(isArray); // True
+
+const dataObj = {  id: 1, name: "Siva"};
+const isArray1 = dataObj instanceof Array;
+console.log(isArray1); // False
+
+
+//Way-2 ====> Using Object.prototype.call()
+const dataArr = [1,2,3,4,5];
+const isArray2 = Object.prototype.toString.call(dataArr) === '[object Array]';
+console.log(isArray2); // true
+
+const dataObj2 = {id: 1, name: "Siva"};
+const isArray3 = Object.prototype.toString.call(dataObj2) === '[object Array]';
+console.log(isArray3); // false
+
+
+// cloning Array;
+
+// es6 spread operator
+var testArray = [1,2,3,4,5,6,7,8,9];
+var cloneArray = [...testArray];
+console.log(cloneArray);
+
+// slice()
+var testArray1 = [1,2,3,4,5,6,7,8,9];
+var cloneArray1 = testArray1.slice();
+console.log(cloneArray1);
+
+// concat
+var testArray2 = [1,2,3,4,5,6,7,8,9];
+var cloneArray2 = [].concat(testArray2);
+console.log(cloneArray2);
+
+// apply
+var testArray3 = [1,2,3,4,5,6,7,8,9];
+var cloneArray3 = Array.apply(undefined, testArray3 );
+console.log(cloneArray3);
+
+// Array From
+var testArray4 = [1,2,3,4,5,6,7,8,9];
+var cloneArray4  = Array.from(testArray4);
+console.log(cloneArray4);
+
+
+// using loop index
+    const testArray5 = [1, 2];
+        testArrayCopy = [];
+        testArrayCopy1 = [];
+
+        for (i = 0; i < testArray5.length; i++) {
+            testArrayCopy.push(testArray5[i]);
+            if (testArrayCopy[i] === testArray5[0] || testArrayCopy[i] === testArray5[2]) {
+                testArrayCopy.push(testArrayCopy[i]);
+            }
+        }
+        console.log(testArrayCopy);
+    // console.log(testArrayCopy1);
+</script>  
+</body>  
+</html>  
+
+ 
